@@ -49,5 +49,10 @@ Icelandic: ![Icelandic](images/icelandic.png)
 Irish: ![Irish](images/irish.png)
 Polish: ![Polish](images/polish.png)
 
+
+### Projects using this library
+- [RP2040-WS2812B-Animation](https://github.com/TuriSc/RP2040-WS2812B-Animation)
+
+
 ### Version history
 - 2023-11-24 - v1.0.0 - First release
