@@ -1,11 +1,10 @@
-/* CP0-EU
- * Non-standard character set and 8x8 font supporting many European languages.
- * By Turi Scandurra – https://turiscandurra.com/
- * Released under a MIT No Attribution license.
- * v1.0.0
+/**
+ * @file CP0_EU_8x8.h
+ * @brief Non-standard character set and 8x8 font supporting many European languages.
+ * @author Turi Scandurra
+ * @copyright Released under a MIT No Attribution license.
+ * @version v1.0.0
  */
-#ifndef CP0_EU_H
-#define CP0_EU_H
 
 /* CP0-EU character set
 
@@ -27,6 +26,18 @@ p q r s t u v w x y z { | } ~ ¡
 ð ñ ò ó ô õ ö £ ø ù ú û ü ý þ ÿ
 */
 
+#ifndef CP0_EU_8x8_H
+#define CP0_EU_8x8_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/**
+ * @brief 8x8 font data for CP0-EU character set.
+ * @details Each character is represented by an array of 8 bytes, where each byte
+ *          represents a row of pixels in the character.
+ */
 static const char CP0_EU_8x8[256][8] = {
     {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, //   U+0020
     {0x98, 0xbc, 0x66, 0x66, 0x7e, 0x66, 0x66, 0x00}, // Ά U+0386
@@ -286,6 +297,10 @@ static const char CP0_EU_8x8[256][8] = {
     {0x66, 0x00, 0x66, 0x66, 0x66, 0x3e, 0x06, 0x7c}, // ÿ U+00ff
 };
 
+/**
+ * @brief Character map for CP0-EU character set.
+ * @details Maps each character code to its corresponding Unicode code point.
+ */
 static const uint16_t CHARMAP_CP0_EU[256] = {
     0x0020, 0x0386, 0x0388, 0x0389, 0x038a, 0x038c, 0x038e, 0x038f,
     0x0390, 0x0391, 0x0392, 0x0393, 0x0394, 0x0395, 0x0396, 0x0397,
@@ -321,9 +336,11 @@ static const uint16_t CHARMAP_CP0_EU[256] = {
     0x00f8, 0x00f9, 0x00fa, 0x00fb, 0x00fc, 0x00fd, 0x00fe, 0x00ff, 
 };
 
-/** Describes the width of each character, for proportional rendering.
- *  First byte is leftmost pixel. Second byte is rightmost pixel.
- *  Assumes lrtb order (left to right, top to bottom).
+/**
+ * @brief Character width data for CP0-EU character set.
+ * @details Each character's width is represented by two bytes: the leftmost pixel
+ *          and the rightmost pixel. Assumes left-to-right, top-to-bottom (lrtb)
+ *          order.
  */
 static const uint8_t CP0_EU_8x8_offsets[512] = {
     1, 4, // Space is the only one defined manually
@@ -589,4 +606,8 @@ static const uint8_t CP0_EU_8x8_offsets[512] = {
 All human beings by nature stretch themselves out towards knowing.
 - Aristotle
 */
+
+#ifdef __cplusplus
+}
 #endif
+#endif //CP0_EU_8x8_H
